@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+
+        <link href="/static/styles.css" rel="stylesheet"/>
+
+        <script src="/static/scripts.js"></script>
+
+        <title>{% block title %}{% endblock %}</title>
+    </head>
+
+    <body>
+
+        <nav>
+            <div class="nav">
+                <ul>
+                    {% if session.user_id %}
+                    <li><a class="nav__button" href="/logout">Logout</a></li>
+
+                    {% else %}
+                    <li><a class="nav__button" href="/login">Login</a></li>
+                    <li><a class="nav__button" href="/register">Register</a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            {% block main %}{% endblock %}
+        </main>
+
+    </body>
+
+</html>
