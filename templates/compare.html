@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Compare with {{ friend }}
+{% endblock %}
+
+{% block main %}
+    <div class="section back">
+        <ul class="back-nav">
+            <li><a class="nav__button" href="/">Back to homepage</a></li>
+        </ul>
+    </div>
+
+    <div class="section compare">
+
+        <div class="score">
+            <div class="score__container">
+                <p>You</p>
+                <p class="score__number">{{ score["user"] }}</p>
+            </div>
+        </div>
+
+        <div class="score">
+            <div class="score__container">
+                <p>{{ friend }}</p>
+                <p class="score__number">{{ score["friend"] }}</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="section reminder">
+        {% if score["user"] < score["friend"] %}
+            <p>You still owe {{ friend }} {{ score["friend"] - score["user"] }} beers!</p>
+
+        {% elif score["user"] > score["friend"] %}
+            <p>{{ friend }} still owes you {{ score["user"] - score["friend"] }} beers!</p>
+
+        {% else %}
+            <p>An equilibrium has been reached!</p>
+
+        {% endif %}
+    </div>
+
+    <div class="history">
+        <h2 class="history__title">Your beer history with {{ friend }}:</h2>
+        <div class="transactions">
+            <div class="transactions__head">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="transactions__body">
+                <table>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td>{{ row["date"] }}</td>
+                            <td>{{ row["amount"] }}</td>
+                            <td>{{ row["from"] }}</td>
+                            <td>{{ row["to"] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}
