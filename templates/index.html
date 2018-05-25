@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Track your beer!
+{% endblock %}
+
+{% block main %}
+    <div class="section welcome">
+        <h1 class="welcome__title">Welcome back, {{ username }}!</h1>
+        <p class="welcome__subtitle">You have a beer trade balance of {{ balance }}.</p>
+    </div>
+
+    <div class="section action">
+
+        <div class="action__image">
+            <img src="static/beer.png" alt="beer" draggable="false">
+        </div>
+
+        <div class="action__select">
+            <button class="button" onclick="openForm('get')">
+                <p>I got beer!</p>
+            </button>
+
+            <button class="button" onclick="openForm('give')">
+                <p>I gave beer!</p>
+            </button>
+        </div>
+
+        <div class="action__form">
+            <button class="button" onclick="closeForm()">Hide</button>
+            <form action="/" class="form" method="post">
+                <input id="action-info" name="action" type="hidden" value=""/>
+                <input class="textfield" name="amount" placeholder="Amount" type="text"/>
+                <input class="textfield" name="friend" placeholder="Friend" type="text"/>
+                <button class="button" type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+
+    <div class="section friends">
+        <h2 class="friends__title">Your friends:</h2>
+        <ul>
+            {% for friend in friends %}
+            <li><a class="friends__friend" href="/compare/{{ friend }}">{{ friend }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <div class="section history">
+        <h2 class="history__title">Your beer history:</h2>
+        <div class="transactions">
+            <div class="transactions__head">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>From</th>
+                            <th>To</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+            <div class="transactions__body">
+                <table>
+                    <tbody>
+                        {% for row in rows %}
+                        <tr>
+                            <td>{{ row["date"] }}</td>
+                            <td>{{ row["amount"] }}</td>
+                            <td>{{ row["from"] }}</td>
+                            <td>{{ row["to"] }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

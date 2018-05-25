@@ -1,0 +1,290 @@
+/*
+    Reset browser defaults
+    http://meyerweb.com/eric/tools/css/reset/
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+
+	font-family: Arial;
+}
+
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+}
+
+ol, ul {
+	list-style: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    margin: 0px 300px 0px 300px;
+}
+
+
+/* Navigation */
+
+.nav {
+    float: right;
+    margin-right: 100px;
+
+    background-color: #1c1c1c;
+}
+
+.nav li {
+    display: inline-block;
+}
+
+.nav__button {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+
+    color: white;
+}
+
+.nav__button:hover {
+    color: black;
+    background-color: #FFB300;
+}
+
+
+/* Section */
+
+.section {
+    margin-bottom: 30px;
+
+    text-align: left;
+}
+
+
+/* Form */
+
+.form {
+    display: inline-block;
+}
+
+
+/* Textfield */
+
+.textfield {
+    display: inline-block;
+    margin: 8px 0px 8px 0px;
+    padding: 10px;
+
+    font-size: 13pt;
+    border: 2px solid black;
+}
+
+.textfield:focus {
+    outline: none;
+}
+
+
+/* Button */
+
+.button {
+    margin: 7px 0px 7px 0px;
+    padding: 10px 15px 10px 15px;
+
+    font-size: 13pt;
+    cursor: pointer;
+    color: white;
+    background-color: #1c1c1c;
+    border: 2px solid #1c1c1c;
+}
+
+.button:hover {
+    color: black;
+    background-color: #FFB300;
+    border: 2px solid #FFB300;
+}
+
+
+/* Table */
+
+.transactions {
+    border: 2px solid #1c1c1c;
+}
+
+.transactions, .transactions table {
+    width: 100%;
+}
+
+.transactions th {
+    color: white;
+    text-align: left;
+    background-color: #1c1c1c;
+}
+
+.transactions th, td {
+    width: 25%;
+    padding: 10px;
+}
+
+.transactions tr:nth-child(even) {
+    background-color: #eaeaea;
+}
+
+.transactions__body {
+    height: 150px;
+    overflow: auto;
+}
+
+
+/* Index */
+/* Welcome section */
+
+.welcome {
+    display: block;
+}
+
+.welcome__title {
+    padding: 20px 0px 7px 0px;
+
+    font-size: 35pt;
+}
+
+.welcome__subtitle {
+    padding-bottom: 20px;
+}
+
+
+/* Action section */
+
+.action {
+    height: 200px;
+    text-align: center;
+}
+
+.action__form {
+    display: none;
+}
+
+
+/* Friends section */
+
+.friends__title {
+    padding: 0px 0px 10px 0px;
+    font-size: 20pt;
+}
+
+.friends li {
+    font-size: 15pt;
+    padding: 4px 0px 4px 20px;
+}
+
+.friends a {
+    color: black;
+    text-decoration: underline;
+}
+
+
+/* History section */
+
+.history__title {
+    padding: 0px 0px 10px 0px;
+    font-size: 20pt;
+}
+
+
+/* Login and Register */
+/* Login section */
+
+.login {
+    text-align: center;
+
+    padding-top: 200px;
+}
+
+.login__form {
+    padding: 30px;
+
+    text-align: left;
+    background-color: lightgray;
+    border-radius: 5px;
+}
+
+.login__form .textfield {
+    display: block;
+}
+
+
+/* Compare */
+/* Back section */
+
+.back-nav {
+    display: inline-block;
+    background-color: #1c1c1c;
+}
+
+
+/* Compare section */
+
+.compare {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.score {
+    display:inline-block;
+    justify-content: center;
+
+    background-color: #eaeaea;
+    text-align: center;
+}
+
+.score__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+}
+
+.score__number {
+    margin: 10px;
+    font-size: 50pt;
+    font-weight: bold;
+}
+
+/* Reminder section */
+
+.reminder {
+    text-align: center;
+    font-size: 15pt;
+    margin-bottom: 100px;
+}
